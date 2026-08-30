@@ -8,6 +8,11 @@
     <title>Eric Luo | Computer Science</title>
 
     <style>
+
+        /* =========================================================
+           BASIC SETTINGS
+        ========================================================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,27 +24,52 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
             color: #1f2937;
             background: #ffffff;
             line-height: 1.7;
         }
 
-        /* Navigation */
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 28px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
 
         nav {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #e5e7eb;
-            backdrop-filter: blur(10px);
             z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .nav-container {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: auto;
-            padding: 16px 24px;
+
+            padding: 16px 28px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,59 +77,115 @@
 
         .logo {
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 750;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
 
         .nav-links a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #374151;
-            font-weight: 500;
+            color: #4b5563;
+            font-size: 15px;
+            font-weight: 550;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
             color: #2563eb;
         }
 
-        /* Hero */
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero-wrapper {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f8fafc 0%,
+                    #eef4ff 100%
+                );
+
+            border-bottom: 1px solid #e5e7eb;
+        }
 
         .hero {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: auto;
-            padding: 110px 24px 90px;
+
+            padding: 105px 28px 95px;
+
+            display: grid;
+            grid-template-columns: 1fr 260px;
+
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            margin-bottom: 18px;
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            background: #dbeafe;
+            color: #1d4ed8;
+
+            font-size: 14px;
+            font-weight: 650;
         }
 
         .hero h1 {
-            font-size: 56px;
-            line-height: 1.1;
-            margin-bottom: 18px;
+            font-size: 58px;
+            line-height: 1.08;
+
+            color: #111827;
+
+            margin-bottom: 15px;
         }
 
         .hero h2 {
             font-size: 24px;
-            color: #4b5563;
             font-weight: 500;
-            margin-bottom: 15px;
+
+            color: #374151;
+
+            margin-bottom: 18px;
         }
 
         .hero p {
-            max-width: 720px;
-            font-size: 19px;
+            max-width: 700px;
+
+            font-size: 18px;
             color: #6b7280;
         }
 
-        .buttons {
-            margin-top: 30px;
+        .hero-buttons {
+            margin-top: 31px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
         }
 
         .button {
             display: inline-block;
-            margin-right: 12px;
-            margin-bottom: 10px;
+
             padding: 11px 20px;
+
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
+
+            font-weight: 650;
+            font-size: 15px;
+
             transition: 0.2s;
         }
 
@@ -110,122 +196,467 @@
 
         .button-primary:hover {
             background: #374151;
+            transform: translateY(-1px);
         }
 
-        .button-secondary {
+        .button-outline {
+            color: #111827;
+            background: white;
+
             border: 1px solid #d1d5db;
+        }
+
+        .button-outline:hover {
+            background: #f3f4f6;
+        }
+
+
+        /* =========================================================
+           PROFILE PHOTO
+        ========================================================= */
+
+        .profile-photo {
+            width: 235px;
+            height: 235px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 7px solid white;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, 0.12);
+        }
+
+        .photo-placeholder {
+            width: 235px;
+            height: 235px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #6b7280;
+            font-size: 14px;
+
+            background: #e5e7eb;
+
+            border: 7px solid white;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, 0.10);
+        }
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
+
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-of-type(even) {
+            background: #fafafa;
+        }
+
+        .section-title {
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #111827;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .description {
+            max-width: 850px;
+
+            color: #4b5563;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           EDUCATION / EXPERIENCE
+        ========================================================= */
+
+        .timeline-card {
+            padding: 28px;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 13px;
+
+            background: white;
+
+            margin-bottom: 20px;
+        }
+
+        .timeline-top {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-card h3 {
+            font-size: 21px;
             color: #111827;
         }
 
-        .button-secondary:hover {
-            background: #f3f4f6;
+        .timeline-date {
+            color: #6b7280;
+            font-size: 14px;
+
+            white-space: nowrap;
         }
 
-        /* Sections */
+        .timeline-subtitle {
+            color: #2563eb;
 
-        section {
-            max-width: 1050px;
-            margin: auto;
-            padding: 75px 24px;
+            font-weight: 600;
+
+            margin-bottom: 12px;
         }
 
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 28px;
-        }
+        .timeline-card ul {
+            margin-left: 20px;
+            margin-top: 12px;
 
-        section p {
-            font-size: 17px;
             color: #4b5563;
         }
 
-        /* Research */
+        .timeline-card li {
+            margin-bottom: 7px;
+        }
 
-        .research-list {
-            margin-top: 25px;
+
+        /* =========================================================
+           RESEARCH INTERESTS
+        ========================================================= */
+
+        .tags {
+            margin-top: 24px;
+
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+
+            gap: 11px;
         }
 
-        .research-tag {
-            padding: 9px 15px;
+        .tag {
+            padding: 8px 14px;
+
             border-radius: 20px;
+
             background: #f3f4f6;
-            font-weight: 500;
+
+            border: 1px solid #e5e7eb;
+
+            color: #374151;
+
+            font-size: 14px;
+            font-weight: 550;
         }
 
-        /* Projects */
+
+        /* =========================================================
+           PROJECT CARDS
+        ========================================================= */
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(290px, 1fr));
+
+            gap: 23px;
         }
 
         .project-card {
+            display: flex;
+            flex-direction: column;
+
+            overflow: hidden;
+
+            background: white;
+
             border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 25px;
-            transition: 0.2s;
+            border-radius: 14px;
+
+            transition: 0.25s;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 14px 35px
+                rgba(0, 0, 0, 0.08);
         }
 
-        .project-card h3 {
-            font-size: 21px;
-            margin-bottom: 10px;
-        }
+        .project-image {
+            height: 170px;
 
-        .project-card p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e0e7ff,
+                    #dbeafe
+                );
+
+            color: #475569;
+
+            font-weight: 600;
             font-size: 15px;
         }
 
-        /* Contact */
+        .project-content {
+            padding: 23px;
 
-        .contact a {
-            color: #2563eb;
-            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+
+            flex: 1;
         }
 
-        /* Footer */
+        .project-card h3 {
+            color: #111827;
+
+            font-size: 21px;
+
+            margin-bottom: 11px;
+        }
+
+        .project-card p {
+            color: #6b7280;
+
+            font-size: 15px;
+
+            margin-bottom: 16px;
+        }
+
+        .project-tech {
+            color: #2563eb !important;
+
+            font-size: 13px !important;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           AWARDS
+        ========================================================= */
+
+        .award-card {
+            display: flex;
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 24px;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 13px;
+
+            background: white;
+        }
+
+        .award-icon {
+            width: 50px;
+            height: 50px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: #fef3c7;
+
+            font-size: 24px;
+        }
+
+        .award-card h3 {
+            color: #111827;
+        }
+
+        .award-card p {
+            color: #6b7280;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+        }
+
+        .skill-card {
+            padding: 23px;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+
+            background: white;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+
+            color: #111827;
+
+            font-size: 18px;
+        }
+
+        .skill-card p {
+            color: #6b7280;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-box {
+            padding: 35px;
+
+            border-radius: 15px;
+
+            background: #111827;
+
+            color: white;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #d1d5db;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+        .contact-links a {
+            color: white;
+
+            border-bottom:
+                1px solid #9ca3af;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         footer {
-            border-top: 1px solid #e5e7eb;
             text-align: center;
-            padding: 35px;
+
+            padding: 32px;
+
+            border-top: 1px solid #e5e7eb;
+
             color: #9ca3af;
+
             font-size: 14px;
         }
 
-        /* Mobile */
 
-        @media (max-width: 700px) {
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding-top: 75px;
+
+                gap: 45px;
+            }
 
             .hero h1 {
-                font-size: 42px;
+                font-size: 45px;
+            }
+
+            .hero-photo {
+                order: -1;
+            }
+
+            .profile-photo,
+            .photo-placeholder {
+                width: 180px;
+                height: 180px;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .hero {
-                padding-top: 80px;
+            .timeline-top {
+                flex-direction: column;
+                gap: 3px;
             }
+
         }
 
     </style>
 </head>
 
+
 <body>
 
-    <!-- Navigation -->
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
     <nav>
+
         <div class="nav-container">
 
             <div class="logo">
@@ -233,100 +664,229 @@
             </div>
 
             <div class="nav-links">
+
                 <a href="#about">About</a>
-                <a href="#research">Research</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#experience">Research</a>
+
                 <a href="#projects">Projects</a>
+
+                <a href="#awards">Awards</a>
+
+                <a href="#skills">Skills</a>
+
                 <a href="#contact">Contact</a>
+
             </div>
 
         </div>
+
     </nav>
 
 
-    <!-- Hero -->
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
 
-    <div class="hero">
+    <div class="hero-wrapper">
 
-        <h1>Eric Luo</h1>
+        <div class="hero">
 
-        <h2>
-            Computer Science Student at the University of British Columbia
-        </h2>
+            <div>
 
-        <p>
-            Interested in computer vision, autonomous driving,
-            machine learning, and intelligent transportation systems.
-        </p>
+                <div class="hero-label">
+                    Computer Science @ UBC
+                </div>
 
-        <div class="buttons">
+                <h1>
+                    Eric Luo
+                </h1>
 
-            <a class="button button-primary"
-               href="https://github.com/Eric-Luo-UBC">
-                GitHub
-            </a>
+                <h2>
+                    Computer Vision · Autonomous Driving · Machine Learning
+                </h2>
 
-            <a class="button button-secondary"
-               href="#contact">
-                Contact
-            </a>
+                <p>
+
+                    Computer Science student at the University of British Columbia
+                    with research interests in computer vision, autonomous driving,
+                    3D perception, and cooperative intelligent transportation systems.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <!--
+                    Upload your CV to the GitHub repository
+                    and name it Eric_Luo_CV.pdf
+                    -->
+
+                    <a
+                        class="button button-primary"
+                        href="Eric_Luo_CV.pdf"
+                        target="_blank">
+
+                        View CV
+
+                    </a>
+
+
+                    <a
+                        class="button button-outline"
+                        href="https://github.com/Eric-Luo-UBC"
+                        target="_blank">
+
+                        GitHub
+
+                    </a>
+
+
+                    <a
+                        class="button button-outline"
+                        href="#contact">
+
+                        Contact
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-photo">
+
+                <!--
+                AFTER you upload your photo:
+
+                1. Create a folder called images
+                2. Upload a photo called profile.jpg
+                3. Delete the placeholder below
+                4. Use:
+
+                <img
+                    src="images/profile.jpg"
+                    alt="Eric Luo"
+                    class="profile-photo">
+                -->
+
+
+                <div class="photo-placeholder">
+
+                    Add your
+                    profile photo
+                    here later
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
 
-    <!-- About -->
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
 
     <section id="about">
 
-        <h2>About Me</h2>
+        <div class="container">
 
-        <p>
-            I am a Computer Science student at the University of British Columbia.
-            My primary interests lie in computer vision and autonomous driving,
-            particularly perception systems for intelligent vehicles and
-            multi-camera environments.
-        </p>
+            <div class="section-title">
+
+                <h2>
+                    About Me
+                </h2>
+
+            </div>
+
+
+            <p class="description">
+
+                I am a Computer Science student at the University of British Columbia.
+                My academic and research interests focus on computer vision,
+                autonomous driving, and intelligent perception systems.
+
+                I am particularly interested in how visual perception,
+                geometric reasoning, and machine learning can be combined
+                to help autonomous systems understand complex
+                real-world environments.
+
+            </p>
+
+        </div>
 
     </section>
 
 
-    <!-- Research -->
+    <!-- =========================================================
+         EDUCATION
+    ========================================================== -->
 
-    <section id="research">
+    <section id="education">
 
-        <h2>Research Interests</h2>
+        <div class="container">
 
-        <p>
-            I am interested in developing perception and learning systems
-            that allow intelligent vehicles to better understand complex
-            real-world environments.
-        </p>
+            <div class="section-title">
 
-        <div class="research-list">
+                <h2>
+                    Education
+                </h2>
 
-            <div class="research-tag">
-                Computer Vision
             </div>
 
-            <div class="research-tag">
-                Autonomous Driving
-            </div>
 
-            <div class="research-tag">
-                Machine Learning
-            </div>
+            <div class="timeline-card">
 
-            <div class="research-tag">
-                3D Perception
-            </div>
+                <div class="timeline-top">
 
-            <div class="research-tag">
-                Multi-Camera Perception
-            </div>
+                    <h3>
+                        University of British Columbia
+                    </h3>
 
-            <div class="research-tag">
-                Intelligent Transportation
+                    <div class="timeline-date">
+                        Vancouver, Canada
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-subtitle">
+
+                    Bachelor of Science · Computer Science
+
+                </div>
+
+
+                <p>
+
+                    Undergraduate student with interests in
+                    computer vision, artificial intelligence,
+                    algorithms, and autonomous systems.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Dean's Scholar
+                    </li>
+
+                    <li>
+                        Strong foundation in calculus,
+                        discrete mathematics,
+                        software construction,
+                        and algorithms
+                    </li>
+
+                </ul>
+
             </div>
 
         </div>
@@ -334,95 +894,518 @@
     </section>
 
 
-    <!-- Projects -->
+    <!-- =========================================================
+         RESEARCH EXPERIENCE
+    ========================================================== -->
+
+    <section id="experience">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Research Experience
+                </h2>
+
+                <p>
+                    Selected research experience in computer vision
+                    and intelligent transportation.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-card">
+
+                <div class="timeline-top">
+
+                    <h3>
+                        Autonomous Driving & Cooperative Perception Research
+                    </h3>
+
+                    <div class="timeline-date">
+                        Summer 2026
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-subtitle">
+
+                    Tsinghua University
+
+                </div>
+
+
+                <p>
+
+                    Conducted research related to computer vision,
+                    vehicle perception, and cooperative sensing
+                    for intelligent transportation systems.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+
+                        Explored a 3D vehicle perception pipeline
+                        combining object detection,
+                        vehicle priors,
+                        geometric projection,
+                        and image-based reasoning.
+
+                    </li>
+
+                    <li>
+
+                        Investigated multi-camera vehicle matching
+                        using geometric correspondence
+                        and visual appearance information.
+
+                    </li>
+
+                    <li>
+
+                        Analyzed vehicle dimensions and orientation priors
+                        using the KITTI autonomous driving dataset.
+
+                    </li>
+
+                    <li>
+
+                        Implemented a lane detection pipeline
+                        for continuous road video
+                        using classical computer vision methods.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         RESEARCH INTERESTS
+    ========================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Research Interests
+                </h2>
+
+            </div>
+
+
+            <p class="description">
+
+                My current interests focus on perception systems
+                for autonomous vehicles and intelligent environments.
+
+            </p>
+
+
+            <div class="tags">
+
+                <div class="tag">
+                    Computer Vision
+                </div>
+
+                <div class="tag">
+                    Autonomous Driving
+                </div>
+
+                <div class="tag">
+                    Machine Learning
+                </div>
+
+                <div class="tag">
+                    3D Perception
+                </div>
+
+                <div class="tag">
+                    Multi-Camera Perception
+                </div>
+
+                <div class="tag">
+                    Object Detection
+                </div>
+
+                <div class="tag">
+                    Intelligent Transportation Systems
+                </div>
+
+                <div class="tag">
+                    V2X Cooperative Perception
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PROJECTS
+    ========================================================== -->
 
     <section id="projects">
 
-        <h2>Projects</h2>
+        <div class="container">
 
-        <div class="project-grid">
+            <div class="section-title">
 
-
-            <div class="project-card">
-
-                <h3>
-                    3D Vehicle Detection
-                </h3>
+                <h2>
+                    Selected Projects
+                </h2>
 
                 <p>
-                    Exploring computer vision methods for recovering
-                    3D vehicle information from camera images using
-                    object detection, geometric constraints, and
-                    vehicle dimension priors.
+                    Selected work in computer vision
+                    and autonomous driving.
                 </p>
 
             </div>
 
 
-            <div class="project-card">
+            <div class="project-grid">
 
-                <h3>
-                    Multi-Camera Cooperative Perception
-                </h3>
 
-                <p>
-                    Investigating vehicle matching across multiple
-                    cameras using geometric projection and visual
-                    appearance features.
-                </p>
+                <!-- PROJECT 1 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        Project Image Coming Soon
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            3D Vehicle Perception
+                        </h3>
+
+
+                        <p>
+
+                            Developed an experimental pipeline
+                            for estimating vehicle 3D geometry
+                            from camera images using
+                            object detection,
+                            vehicle dimension priors,
+                            depth information,
+                            and geometric projection.
+
+                        </p>
+
+
+                        <p class="project-tech">
+
+                            Python · OpenCV · YOLO · KITTI
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        Project Image Coming Soon
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Multi-Camera Cooperative Perception
+                        </h3>
+
+
+                        <p>
+
+                            Investigated correspondence between vehicles
+                            observed from different cameras using
+                            geometric projection,
+                            spatial matching,
+                            and visual appearance features.
+
+                        </p>
+
+
+                        <p class="project-tech">
+
+                            Python · OpenCV · Homography · HSV
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 3 -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+
+                        Project Image Coming Soon
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <h3>
+                            Lane Detection
+                        </h3>
+
+
+                        <p>
+
+                            Built a lane detection pipeline
+                            for continuous driving video
+                            using edge detection,
+                            region-of-interest filtering,
+                            and Hough line detection.
+
+                        </p>
+
+
+                        <p class="project-tech">
+
+                            Python · OpenCV · Canny · Hough Transform
+
+                        </p>
+
+                    </div>
+
+                </div>
+
 
             </div>
-
-
-            <div class="project-card">
-
-                <h3>
-                    Lane Detection
-                </h3>
-
-                <p>
-                    Developed a lane detection pipeline for continuous
-                    road video using classical computer vision techniques.
-                </p>
-
-            </div>
-
 
         </div>
 
     </section>
 
 
-    <!-- Contact -->
+    <!-- =========================================================
+         AWARDS
+    ========================================================== -->
 
-    <section id="contact" class="contact">
+    <section id="awards">
 
-        <h2>Contact</h2>
+        <div class="container">
 
-        <p>
-            Email:
-            <a href="mailto:ljt2025@student.ubc.ca | luojiatian2025@hotmail.com">
-                ljt2025@student.ubc.ca | luojiatian2025@hotmail.com
-            </a>
-        </p>
+            <div class="section-title">
 
-        <p>
-            GitHub:
-            <a href="https://github.com/Eric-Luo-UBC">
-                github.com/Eric-Luo-UBC
-            </a>
-        </p>
+                <h2>
+                    Honors & Awards
+                </h2>
+
+            </div>
+
+
+            <div class="award-card">
+
+                <div class="award-icon">
+                    ★
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Dean's Scholar
+                    </h3>
+
+                    <p>
+                        University of British Columbia
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
 
-    <!-- Footer -->
+    <!-- =========================================================
+         SKILLS
+    ========================================================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Technical Skills
+                </h2>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <p>
+                        Python · Java
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Computer Vision
+                    </h3>
+
+                    <p>
+                        OpenCV · YOLO · Image Processing
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Research
+                    </h3>
+
+                    <p>
+                        Object Detection · 3D Geometry ·
+                        Multi-Camera Matching
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Tools
+                    </h3>
+
+                    <p>
+                        Git · GitHub · KITTI
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>
+                    Contact
+                </h2>
+
+
+                <p>
+
+                    I am interested in research opportunities
+                    related to computer vision,
+                    autonomous driving,
+                    and intelligent perception systems.
+
+                </p>
+
+
+                <div class="contact-links">
+
+                    <!-- CHANGE EMAIL BELOW -->
+
+                    <a href="mailto:YOUR_EMAIL_HERE">
+                        YOUR_EMAIL_HERE
+                    </a>
+
+
+                    <a
+                        href="https://github.com/Eric-Luo-UBC"
+                        target="_blank">
+
+                        GitHub
+
+                    </a>
+
+
+                    <a
+                        href="Eric_Luo_CV.pdf"
+                        target="_blank">
+
+                        CV
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
 
     <footer>
 
         © 2026 Eric Luo · Built with GitHub Pages
 
     </footer>
+
 
 </body>
 
