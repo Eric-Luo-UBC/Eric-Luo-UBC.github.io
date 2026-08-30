@@ -4,35 +4,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric Luo | Personal Website</title>
+
+    <title>Eric Luo | Computer Science</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            color: #1f2937;
+            background: #ffffff;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #e5e7eb;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero */
+
+        .hero {
+            max-width: 1050px;
+            margin: auto;
+            padding: 110px 24px 90px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #4b5563;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 19px;
+            color: #6b7280;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-right: 12px;
+            margin-bottom: 10px;
+            padding: 11px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #111827;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #374151;
+        }
+
+        .button-secondary {
+            border: 1px solid #d1d5db;
+            color: #111827;
+        }
+
+        .button-secondary:hover {
+            background: #f3f4f6;
+        }
+
+        /* Sections */
+
+        section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 75px 24px;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 28px;
+        }
+
+        section p {
+            font-size: 17px;
+            color: #4b5563;
+        }
+
+        /* Research */
+
+        .research-list {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .research-tag {
+            padding: 9px 15px;
+            border-radius: 20px;
+            background: #f3f4f6;
+            font-weight: 500;
+        }
+
+        /* Projects */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 15px;
+        }
+
+        /* Contact */
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            padding: 35px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 80px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <h1>Eric Luo</h1>
+    <!-- Navigation -->
 
-    <p>
-        Computer Science Student at the University of British Columbia
-    </p>
+    <nav>
+        <div class="nav-container">
 
-    <h2>About Me</h2>
-    <p>
-        Welcome to my personal website! I am a Computer Science student at the University of British Columbia.
-        My interests include computer vision, autonomous driving, and machine learning.
-    </p>
+            <div class="logo">
+                Eric Luo
+            </div>
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Computer Vision</li>
-        <li>Autonomous Driving</li>
-        <li>Machine Learning</li>
-    </ul>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
 
-    <h2>Projects</h2>
-    <p>Coming soon.</p>
+        </div>
+    </nav>
 
-    <h2>Contact</h2>
-    <p>ljt2025@student.ubc.ca | luojiatian2025@hotmail.com</p>
+
+    <!-- Hero -->
+
+    <div class="hero">
+
+        <h1>Eric Luo</h1>
+
+        <h2>
+            Computer Science Student at the University of British Columbia
+        </h2>
+
+        <p>
+            Interested in computer vision, autonomous driving,
+            machine learning, and intelligent transportation systems.
+        </p>
+
+        <div class="buttons">
+
+            <a class="button button-primary"
+               href="https://github.com/Eric-Luo-UBC">
+                GitHub
+            </a>
+
+            <a class="button button-secondary"
+               href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a Computer Science student at the University of British Columbia.
+            My primary interests lie in computer vision and autonomous driving,
+            particularly perception systems for intelligent vehicles and
+            multi-camera environments.
+        </p>
+
+    </section>
+
+
+    <!-- Research -->
+
+    <section id="research">
+
+        <h2>Research Interests</h2>
+
+        <p>
+            I am interested in developing perception and learning systems
+            that allow intelligent vehicles to better understand complex
+            real-world environments.
+        </p>
+
+        <div class="research-list">
+
+            <div class="research-tag">
+                Computer Vision
+            </div>
+
+            <div class="research-tag">
+                Autonomous Driving
+            </div>
+
+            <div class="research-tag">
+                Machine Learning
+            </div>
+
+            <div class="research-tag">
+                3D Perception
+            </div>
+
+            <div class="research-tag">
+                Multi-Camera Perception
+            </div>
+
+            <div class="research-tag">
+                Intelligent Transportation
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+
+
+            <div class="project-card">
+
+                <h3>
+                    3D Vehicle Detection
+                </h3>
+
+                <p>
+                    Exploring computer vision methods for recovering
+                    3D vehicle information from camera images using
+                    object detection, geometric constraints, and
+                    vehicle dimension priors.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Multi-Camera Cooperative Perception
+                </h3>
+
+                <p>
+                    Investigating vehicle matching across multiple
+                    cameras using geometric projection and visual
+                    appearance features.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Lane Detection
+                </h3>
+
+                <p>
+                    Developed a lane detection pipeline for continuous
+                    road video using classical computer vision techniques.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            Email:
+            <a href="mailto:ljt2025@student.ubc.ca | luojiatian2025@hotmail.com">
+                ljt2025@student.ubc.ca | luojiatian2025@hotmail.com
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/Eric-Luo-UBC">
+                github.com/Eric-Luo-UBC
+            </a>
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Eric Luo · Built with GitHub Pages
+
+    </footer>
 
 </body>
 
